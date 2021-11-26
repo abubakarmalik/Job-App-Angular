@@ -1,0 +1,81 @@
+<div class="formbody">
+  <h2>Sign up</h2>
+  <form
+    #signupForm="ngForm"
+    (ngSubmit)="signupForm.valid && signUp(signupForm.value)"
+  >
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <div class="inputfield">
+        <input
+          type="email"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          required
+          email
+          name="email"
+          #email="ngModel"
+          ngModel
+        />
+      </div>
+      <span
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="error"
+        >Provide valid email</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Ente name</label>
+      <div class="inputfield">
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Enter name"
+          required
+          name="name"
+          #name="ngModel"
+          ngModel
+        />
+      </div>
+      <span *ngIf="name.invalid && (name.dirty || name.touched)" class="error"
+        >Provide valid name</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <div class="inputfield">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          required
+          minlength="6"
+          maxlength="12"
+          name="password"
+          #password="ngModel"
+          ngModel
+        />
+      </div>
+      <span
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="error"
+        >Provide password must be 6 chracterl</span
+      >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Signup</button>
+    <br />
+    <span
+      *ngIf="
+        signupForm.submitted &&
+        (email.invalid || name.invalid || password.invalid)
+      "
+      class="error"
+      >{{ msgs }}</span
+    >
+    <br />
+  </form>
+  <p>Already have an account<a routerLink="/login"> login</a></p>
+</div>

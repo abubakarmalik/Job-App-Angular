@@ -1,0 +1,20 @@
+<nav ngbNav #nav="ngbNav" class="nav-tabs">
+  <ng-container ngbNavItem>
+    <a ngbNavLink routerLink="/home">Home</a>
+    <ng-template ngbNavContent> </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem *ngIf="role !== 'admin'">
+    <a ngbNavLink routerLink="addTask">Add Task</a>
+    <ng-template ngbNavContent> </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem>
+    <a ngbNavLink routerLink="allTask">All Task</a>
+    <ng-template ngbNavContent> </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem>
+    <a ngbNavLink (click)="logout()">logout</a>
+    <ng-template ngbNavContent> </ng-template>
+  </ng-container>
+</nav>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

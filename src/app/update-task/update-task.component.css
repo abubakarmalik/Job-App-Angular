@@ -1,0 +1,33 @@
+.formbody {
+  padding: 10px;
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 30%;
+  /* margin-left: 100px; */
+  left: 35%;
+}
+.inputfield {
+  border-radius: 30px;
+  max-width: 400px;
+  min-height: 40px;
+  background-color: whitesmoke;
+}
+.datee {
+  padding-right: 10px;
+}
+.bg input,
+label {
+  background: none;
+}
+h2 {
+  color: rgb(37, 139, 223);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.toggle {
+  margin-right: 10px;
+}
+.checkbox {
+  height: 15px;
+  width: 15px;
+}

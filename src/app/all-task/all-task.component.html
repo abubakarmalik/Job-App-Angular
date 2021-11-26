@@ -1,0 +1,63 @@
+<br />
+
+<h2>Whole Tasks</h2>
+<br />
+
+<table class="table table-striped" [style.text-align]="'center'">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Due Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="token.role === 'admin'; else elseBlock">
+    <tr *ngFor="let person of persons; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td (click)="onDetail(person)">
+        {{ person.name }}
+      </td>
+      <td>
+        {{ person.date }}
+      </td>
+      <td>
+        <button class="status" (click)="onStatus(person.msg)">
+          {{ person.status }}
+        </button>
+      </td>
+      <td (click)="onDelete(person.msg)">
+        <i class="far fa-trash-alt"></i>
+      </td>
+      <td (click)="onSelect(person)">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <ng-template #elseBlock>
+      <tr *ngFor="let person of CurrentPerson; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td (click)="onDetail(person)">
+          {{ person.name }}
+        </td>
+        <td>
+          {{ person.date }}
+        </td>
+        <td>
+          <button class="status" (click)="onStatus(person.msg)">
+            {{ person.status }}
+          </button>
+        </td>
+        <td (click)="onDelete(person.msg)">
+          <i class="far fa-trash-alt"></i>
+        </td>
+        <td (click)="onSelect(person)">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

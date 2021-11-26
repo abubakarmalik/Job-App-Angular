@@ -1,0 +1,13 @@
+.detail {
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: cornflowerblue;
+  margin-right: 20px;
+}
+.detail span {
+  font-size: 14px;
+  padding-left: 20px;
+  color: black;
+}

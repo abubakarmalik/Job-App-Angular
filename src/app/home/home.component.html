@@ -1,0 +1,44 @@
+<br />
+
+<h2>Daily Task</h2>
+<br />
+
+<table class="table table-striped" [style.text-align]="'center'">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="token.role === 'admin'; else elseBlock">
+    <tr *ngFor="let person of adminDaliy; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        {{ person.name }}
+      </td>
+      <td *ngIf="person.status === true">
+        <button class="status">Complete</button>
+      </td>
+      <td *ngIf="person.status === false">
+        <button class="status">Pending</button>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <ng-template #elseBlock>
+      <tr *ngFor="let person of daily; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ person.name }}
+        </td>
+        <td *ngIf="person.status === true">
+          <button class="status">Complete</button>
+        </td>
+        <td *ngIf="person.status === false">
+          <button class="status">Pending</button>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

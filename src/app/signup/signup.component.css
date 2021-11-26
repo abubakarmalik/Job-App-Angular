@@ -1,0 +1,36 @@
+.formbody {
+  padding: 10px;
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 30%;
+  /* margin-left: 100px; */
+  left: 35%;
+}
+
+.inputfield {
+  border-radius: 30px;
+  width: 400px;
+  height: 40px;
+  background-color: whitesmoke;
+}
+input.is-invalid {
+  border-left: 5px solid red;
+}
+input.is-valid {
+  border-left: 5px solid green;
+}
+.error {
+  color: red;
+}
+.option {
+  height: 30px;
+  width: 80px;
+  border-radius: 30px;
+  text-align: center;
+}
+h2 {
+  color: rgb(37, 139, 223);
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
